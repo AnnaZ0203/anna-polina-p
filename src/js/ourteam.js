@@ -1,53 +1,73 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const memberNameInput = document.querySelector('.member-name-input');
-  const saveNameButton = document.querySelector('.save-name-button');
-  const workInfoTextarea = document.querySelector('.work-info-textarea');
-  const saveWorkButton = document.querySelector('.save-work-button');
-  const currentNameDisplay = document.querySelector('.current-name');
-  const currentWorkDisplay = document.querySelector('.current-work');
+  const slider = document.querySelector('.team-slider');
+  const sliderTrack = document.querySelector('.slider-track');
+  const slides = document.querySelectorAll('.slide');
+  const prevBtn = document.querySelector('.slider-arrow-prev');
+  const nextBtn = document.querySelector('.slider-arrow-next');
+  const dots = document.querySelectorAll('.dot');
 
-  const savedName = localStorage.getItem('teamMemberName') || 'Не вказано';
-  const savedWork = localStorage.getItem('teamMemberWork') || 'Не вказано';
+  let currentSlide = 0;
+  const slideWidth = slides[0].offsetWidth;
+  const totalSlides = slides.length;
 
-  currentNameDisplay.textContent = savedName;
-  currentWorkDisplay.textContent = savedWork;
+  function initSlider() {
+    sliderTrack.style.width = `${slideWidth * totalSlides}px`;
 
-  if (savedName !== 'Не вказано') {
-    memberNameInput.value = savedName;
+    prevBtn.addEventListener('click', showPrevSlide);
+    nextBtn.addEventListener('click', showNextSlide);
+    dots.forEach(dot => {
+      dot.addEventListener('click', function () {
+        const slideIndex = parseInt(this.getAttribute('data-slide'));
+        goToSlide(slideIndex);
+      });
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowLeft') {
+        showPrevSlide();
+      } else if (e.key === 'ArrowRight') {
+        showNextSlide();
+      }
+    });
+
+    updateSlider();
   }
-  if (savedWork !== 'Не вказано') {
-    workInfoTextarea.value = savedWork;
+
+  function showPrevSlide() {
+    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+    updateSlider();
   }
 
-  saveNameButton.addEventListener('click', function () {
-    const name = memberNameInput.value.trim();
+  function showNextSlide() {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    updateSlider();
+  }
 
-    if (name === '') {
-      alert("Будь ласка, введіть ім'я студента");
-      return;
-    }
+  function goToSlide(index) {
+    currentSlide = index;
+    updateSlider();
+  }
 
-    currentNameDisplay.textContent = name;
-    localStorage.setItem('teamMemberName', name);
-    alert("Ім'я збережено успішно!");
+  function updateSlider() {
+    const offset = -currentSlide * slideWidth;
+    sliderTrack.style.transform = `translateX(${offset}px)`;
+    sliderTrack.style.transition = 'transform 0.5s ease';
+
+    dots.forEach((dot, index) => {
+      dot.classList.toggle('active', index === currentSlide);
+    });
+
+    prevBtn.style.opacity = currentSlide === 0 ? '0.5' : '1';
+    nextBtn.style.opacity = currentSlide === totalSlides - 1 ? '0.5' : '1';
+  }
+
+  window.addEventListener('resize', function () {
+    const newSlideWidth = slides[0].offsetWidth;
+    sliderTrack.style.width = `${newSlideWidth * totalSlides}px`;
+
+    const offset = -currentSlide * newSlideWidth;
+    sliderTrack.style.transform = `translateX(${offset}px)`;
   });
 
-  saveWorkButton.addEventListener('click', function () {
-    const workInfo = workInfoTextarea.value.trim();
-
-    if (workInfo === '') {
-      alert('Будь ласка, введіть інформацію про роботу');
-      return;
-    }
-
-    currentWorkDisplay.textContent = workInfo;
-    localStorage.setItem('teamMemberWork', workInfo);
-    alert('Інформація про роботу збережена успішно!');
-  });
-
-  memberNameInput.addEventListener('keypress', function (e) {
-    if (e.key === 'Enter') {
-      saveNameButton.click();
-    }
-  });
+  initSlider();
 });

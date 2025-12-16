@@ -1,73 +1,90 @@
 document.addEventListener('DOMContentLoaded', function () {
+  // Елементи слайдера
   const slider = document.querySelector('.team-slider');
-  const sliderTrack = document.querySelector('.slider-track');
-  const slides = document.querySelectorAll('.slide');
-  const prevBtn = document.querySelector('.slider-arrow-prev');
-  const nextBtn = document.querySelector('.slider-arrow-next');
+  const slides = document.querySelectorAll('.team-slide');
+  const prevBtn = document.querySelector('.left-btn');
+  const nextBtn = document.querySelector('.right-btn');
   const dots = document.querySelectorAll('.dot');
 
+  // Константи
+  const SLIDE_WIDTH = 700; // Фіксована ширина слайда
+  const TOTAL_SLIDES = slides.length;
   let currentSlide = 0;
-  const slideWidth = slides[0].offsetWidth;
-  const totalSlides = slides.length;
 
+  // Ініціалізація
   function initSlider() {
-    sliderTrack.style.width = `${slideWidth * totalSlides}px`;
+    console.log('Ініціалізація слайдера...');
 
+    // Перевірка елементів
+    if (!slider || slides.length === 0) {
+      console.error('Елементи слайдера не знайдені');
+      return;
+    }
+
+    // Встановлюємо ширину слайдера
+    slider.style.width = `${SLIDE_WIDTH * TOTAL_SLIDES}px`;
+
+    // Навігація кнопками
     prevBtn.addEventListener('click', showPrevSlide);
     nextBtn.addEventListener('click', showNextSlide);
-    dots.forEach(dot => {
-      dot.addEventListener('click', function () {
-        const slideIndex = parseInt(this.getAttribute('data-slide'));
-        goToSlide(slideIndex);
-      });
+
+    // Навігація точками
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => goToSlide(index));
     });
 
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'ArrowLeft') {
-        showPrevSlide();
-      } else if (e.key === 'ArrowRight') {
-        showNextSlide();
-      }
+    // Клавіатура
+    document.addEventListener('keydown', e => {
+      if (e.key === 'ArrowLeft') showPrevSlide();
+      if (e.key === 'ArrowRight') showNextSlide();
     });
 
+    // Оновлюємо початковий стан
     updateSlider();
   }
 
+  // Попередній слайд
   function showPrevSlide() {
-    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+    currentSlide = currentSlide === 0 ? TOTAL_SLIDES - 1 : currentSlide - 1;
     updateSlider();
   }
 
+  // Наступний слайд
   function showNextSlide() {
-    currentSlide = (currentSlide + 1) % totalSlides;
+    currentSlide = currentSlide === TOTAL_SLIDES - 1 ? 0 : currentSlide + 1;
     updateSlider();
   }
 
+  // Перейти до слайду
   function goToSlide(index) {
-    currentSlide = index;
-    updateSlider();
+    if (index >= 0 && index < TOTAL_SLIDES) {
+      currentSlide = index;
+      updateSlider();
+    }
   }
 
+  // Оновити слайдер
   function updateSlider() {
-    const offset = -currentSlide * slideWidth;
-    sliderTrack.style.transform = `translateX(${offset}px)`;
-    sliderTrack.style.transition = 'transform 0.5s ease';
+    // Розраховуємо зсув
+    const offset = -currentSlide * SLIDE_WIDTH;
 
+    // Застосовуємо трансформацію
+    slider.style.transform = `translateX(${offset}px)`;
+
+    // Оновлюємо активну точку
     dots.forEach((dot, index) => {
       dot.classList.toggle('active', index === currentSlide);
     });
 
-    prevBtn.style.opacity = currentSlide === 0 ? '0.5' : '1';
-    nextBtn.style.opacity = currentSlide === totalSlides - 1 ? '0.5' : '1';
+    console.log(`Поточний слайд: ${currentSlide + 1}, Зсув: ${offset}px`);
   }
 
-  window.addEventListener('resize', function () {
-    const newSlideWidth = slides[0].offsetWidth;
-    sliderTrack.style.width = `${newSlideWidth * totalSlides}px`;
-
-    const offset = -currentSlide * newSlideWidth;
-    sliderTrack.style.transform = `translateX(${offset}px)`;
-  });
-
+  // Запускаємо слайдер
   initSlider();
+
+  // Тестуємо: примусово показуємо 2-й слайд через 2 секунди
+  setTimeout(() => {
+    console.log('Тест: перехід до слайду 2');
+    goToSlide(1);
+  }, 2000);
 });

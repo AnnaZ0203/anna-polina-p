@@ -1,1 +1,306 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Document</title></head><body> <section class="leap-year-checker"> <h2 class="leap-year-title">Перевір в який рік тим народився</h2> <div class="leap-year-input-group"> <label for="birthYear" class="leap-year-label">Введіть рік народження</label> <input type="number" id="birthYear" class="leap-year-input" placeholder="Наприклад, 1990"> <button class="leap-year-button">Перевірити</button> </div> <p class="leap-year-result">Введіть рік для перевірки</p> </section> <section class="number-guessing-game"> <h2 class="guessing-game-title">Вгадай число, яке загадав комп'ютер</h2> <div class="guessing-game-input-group"> <label for="userGuess" class="guessing-game-label">Введіть число (1-100)</label> <input type="number" id="userGuess" class="guessing-game-input" min="1" max="100"> <button class="guessing-game-button">Спробувати</button> </div> <p class="guessing-game-result">Комп'ютер загадав число від 1 до 100</p> </section> <section class="rock-paper-scissors"> <h2 class="rps-title">Камінь - ножиці - папір</h2> <p class="rps-round-result">Оберіть свій варіант</p> <div class="rps-choices"> <button class="rps-choice" data-choice="камінь">Камінь</button> <button class="rps-choice" data-choice="ножиці">Ножиці</button> <button class="rps-choice" data-choice="папір">Папір</button> </div> <div class="rps-info"> <div class="rps-computer-choice"> <h3>Варіант комп'ютера</h3> <p class="computer-choice-display">--</p> </div> <div class="rps-score"> <h3>Рахунок:</h3> <div class="score-board"> <div class="score-item"> <span class="score-label">Комп'ютер:</span> <span class="computer-score score-value">0</span> </div> <div class="score-item"> <span class="score-label">Ви:</span> <span class="player-score score-value">0</span> </div> </div> </div> </div> </section> <section class="calculator"> <h2 class="calculator-title">Калькулятор</h2> <div class="calculator-inputs"> <div class="calculator-input-group"> <label for="num1" class="calculator-label">Введіть перше число</label> <input type="number" id="num1" class="calculator-input" step="any"> </div> <div class="calculator-input-group"> <label for="num2" class="calculator-label">Введіть друге число</label> <input type="number" id="num2" class="calculator-input" step="any"> </div> </div> <div class="calculator-operations"> <button class="calc-operation" data-operation="add">+ Додати</button> <button class="calc-operation" data-operation="subtract">- Відняти</button> <button class="calc-operation" data-operation="multiply"> × Помножити </button> <button class="calc-operation" data-operation="divide">÷ Поділити</button> </div> <div class="calculator-result"> <h3>Результат:</h3> <p class="calc-result-display">--</p> </div> </section> <section class="time-calculator"> <h2 class="time-calc-title">Калькулятор часу</h2> <div class="time-calc-input-group"> <label for="secondsInput" class="time-calc-label">Введіть кількість секунд</label> <input type="number" id="secondsInput" class="time-calc-input" min="0" placeholder="Наприклад, 280321"> <button class="time-calc-button">Перетворити</button> </div> <div class="time-calc-result"> <h3>Результат:</h3> <p class="time-result-display">Введіть секунди</p> </div> </section> <section class="google-dino-game"> <h2 class="dino-title">Google Dino Game</h2> <div class="dino-container"> <div class="dino-frame">  <p class="dino-placeholder">Вставте зображення динозавра</p> </div> <div class="dino-controls"> <button class="dino-jump-button">Стрибок (Space)</button> <button class="dino-duck-button">Присісти (Down Arrow)</button> <button class="dino-start-button">Почати гру</button> </div> <div class="dino-stats"> <div class="dino-score"> <span class="score-label">Рахунок:</span> <span class="score-value">0</span> </div> <div class="dino-high-score"> <span class="high-score-label">Найкращий результат:</span> <span class="high-score-value">0</span> </div> </div> </div> </section> <section class="football-game"> <h2 class="football-title">Футбол</h2> <div class="football-field"> <div class="field-frame">  <p class="field-placeholder">Вставте зображення футбольного поля</p> </div> <div class="football-controls"> <button class="shoot-button">Удар по воротах</button> <button class="pass-button">Пасування</button> <button class="reset-button">Почати заново</button> </div> <div class="football-score"> <div class="team-score"> <span class="team-label">Ваша команда:</span> <span class="team-value">0</span> </div> <div class="opponent-score"> <span class="opponent-label">Суперник:</span> <span class="opponent-value">0</span> </div> </div> </div> </section> <section class="max-number-finder"> <h2 class="max-number-title">Знайдіть найбільше число</h2> <p class="max-number-instruction">Введіть 3 числа</p> <div class="number-inputs"> <div class="input-group"> <label class="input-label">Введіть число 1</label> <input type="number" class="number-input" data-index="0" placeholder="Перше число"> </div> <div class="input-group"> <label class="input-label">Введіть число 2</label> <input type="number" class="number-input" data-index="1" placeholder="Друге число"> </div> <div class="input-group"> <label class="input-label">Введіть число 3</label> <input type="number" class="number-input" data-index="2" placeholder="Третє число"> </div> </div> <button class="find-max-button">Знайти найбільше число</button> <div class="max-number-result"> <p class="result-text">Найбільше число, яке ви ввели - <span class="max-number-value">--</span></p> </div> </section> <section class="our-team"> <h2 class="team-title">Наша команда</h2> <div class="team-members-container"> <div class="team-slider-frame">    <p class="slider-placeholder">Вставте слайдер з фотографіями команди</p> </div> <div class="team-member-info"> <div class="member-name-section"> <h3 class="member-name-label">Ім'я студента</h3> <input type="text" class="member-name-input" placeholder="Введіть ім'я студента"> <button class="save-name-button">Зберегти</button> </div> <div class="member-work-info"> <h3 class="work-info-label">Інформація про роботу</h3> <textarea class="work-info-textarea" placeholder="Опишіть роботу, яку виконав/ла студент..."></textarea> <button class="save-work-button">Зберегти інформацію</button> </div> <div class="member-display-info"> <h4 class="display-name"> Ім'я: <span class="current-name">Не вказано</span> </h4> <h4 class="display-work"> Робота: <span class="current-work">Не вказано</span> </h4> </div> </div> </div> </section> <section> <h3>Обери вченого/вч</h3> <div class="grid"> <div class="card" id="c1">1</div> <div class="card" id="c2">2</div> <div class="card" id="c3">3</div> <div class="card" id="c4">4</div> <div class="card" id="c5">5</div> <div class="card" id="c6">6</div> <div class="card" id="c7">7</div> <div class="card" id="c8">8</div> <div class="card" id="c9">9</div> <div class="card" id="c10">10</div> <div class="card" id="c11">11</div> <div class="card" id="c12">12</div> </div> <ul class="questions-list"> <li id="q1">Які вчені народилися в 19 ст.?</li> <li id="q2">Які вчені народилися в 20 ст.?</li> <li id="q3">Які вчені народилися в 21 ст.?</li> <li id="q4">Хто створив перший комп'ютер?</li> <li id="q5">Хто винайшов електрику?</li> <li id="q6">Хто відкрив атом?</li> <li id="q7">Хто відкрив ДНК?</li> <li id="q8">Хто винайшов телеграф?</li> <li id="q9">Хто створив першу програму?</li> <li id="q10">Які вчені працювали в галузі фізики?</li> <li id="q11">Які вчені працювали в галузі математики?</li> <li id="q12">Які вчені працювали в галузі хімії?</li> <li id="q13">Хто отримав Нобелівську премію?</li> </ul> </section> <script src="/anna-polina-p/index.221f1d62.js"></script> <script src="/anna-polina-p/index.ee510886.js"></script> <script src="/anna-polina-p/index.65f33617.js"></script> <script src="/anna-polina-p/index.5cb42700.js"></script> <script src="/anna-polina-p/index.0823ee76.js"></script> <script src="/anna-polina-p/index.4f5caa72.js"></script> <script src="/anna-polina-p/index.f4fb1db5.js"></script> <script src="/anna-polina-p/index.5ea52482.js"></script> <script src="/anna-polina-p/index.1912af44.js"></script> <script src="/anna-polina-p/index.622ad2ff.js"></script> </body></html>
+<!DOCTYPE html><html lang=en><meta charset=UTF-8><meta name=viewport content="width=device-width, initial-scale=1.0"><title>Document</title><link rel=stylesheet href=/anna-polina-p/anna-polina-p.e5717585.css><body>
+    <section class=leap-year-checker>
+  <h2 class=leap-year-title>Перевір в який рік тим народився</h2>
+  <div class=leap-year-input-group>
+    <label for=birthYear class=leap-year-label>Введіть рік народження</label>
+    <input type=number id=birthYear class=leap-year-input placeholder="Наприклад, 1990">
+    <button class=leap-year-button>Перевірити</button>
+  </div>
+  <p class=leap-year-result>Введіть рік для перевірки</p>
+</section>
+
+    <section class=number-guessing-game>
+  <h2 class=guessing-game-title>Вгадай число, яке загадав комп'ютер</h2>
+  <div class=guessing-game-input-group>
+    <label for=userGuess class=guessing-game-label>Введіть число (1-100)</label>
+    <input type=number id=userGuess class=guessing-game-input min=1 max=100>
+    <button class=guessing-game-button>Спробувати</button>
+  </div>
+  <p class=guessing-game-result>Комп'ютер загадав число від 1 до 100</p>
+</section>
+
+    <section class=rock-paper-scissors>
+  <h2 class=rps-title>Камінь - ножиці - папір</h2>
+  <p class=rps-round-result>Оберіть свій варіант</p>
+
+  <div class=rps-choices>
+    <button class=rps-choice data-choice=камінь>Камінь</button>
+    <button class=rps-choice data-choice=ножиці>Ножиці</button>
+    <button class=rps-choice data-choice=папір>Папір</button>
+  </div>
+
+  <div class=rps-info>
+    <div class=rps-computer-choice>
+      <h3>Варіант комп'ютера</h3>
+      <p class=computer-choice-display>--</p>
+    </div>
+
+    <div class=rps-score>
+      <h3>Рахунок:</h3>
+      <div class=score-board>
+        <div class=score-item>
+          <span class=score-label>Комп'ютер:</span>
+          <span class="computer-score score-value">0</span>
+        </div>
+        <div class=score-item>
+          <span class=score-label>Ви:</span>
+          <span class="player-score score-value">0</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <section class=calculator>
+  <h2 class=calculator-title>Калькулятор</h2>
+  <div class=calculator-inputs>
+    <div class=calculator-input-group>
+      <label for=num1 class=calculator-label>Введіть перше число</label>
+      <input type=number id=num1 class=calculator-input step=any>
+    </div>
+
+    <div class=calculator-input-group>
+      <label for=num2 class=calculator-label>Введіть друге число</label>
+      <input type=number id=num2 class=calculator-input step=any>
+    </div>
+  </div>
+
+  <div class=calculator-operations>
+    <button class=calc-operation data-operation=add>+ Додати</button>
+    <button class=calc-operation data-operation=subtract>- Відняти</button>
+    <button class=calc-operation data-operation=multiply>
+      × Помножити
+    </button>
+    <button class=calc-operation data-operation=divide>÷ Поділити</button>
+  </div>
+
+  <div class=calculator-result>
+    <h3>Результат:</h3>
+    <p class=calc-result-display>--</p>
+  </div>
+</section>
+
+    <section class=time-calculator>
+  <h2 class=time-calc-title>Калькулятор часу</h2>
+  <div class=time-calc-input-group>
+    <label for=secondsInput class=time-calc-label>Введіть кількість секунд</label>
+    <input type=number id=secondsInput class=time-calc-input min=0 placeholder="Наприклад, 280321">
+    <button class=time-calc-button>Перетворити</button>
+  </div>
+  <div class=time-calc-result>
+    <h3>Результат:</h3>
+    <p class=time-result-display>Введіть секунди</p>
+  </div>
+</section>
+
+    <section class=google-dino-game>
+  <h2 class=dino-title>Google Dino Game</h2>
+  <div class=dino-container>
+    <div class=dino-frame>
+      
+      <p class=dino-placeholder>Вставте зображення динозавра</p>
+    </div>
+    <div class=dino-controls>
+      <button class=dino-jump-button>Стрибок (Space)</button>
+      <button class=dino-duck-button>Присісти (Down Arrow)</button>
+      <button class=dino-start-button>Почати гру</button>
+    </div>
+    <div class=dino-stats>
+      <div class=dino-score>
+        <span class=score-label>Рахунок:</span>
+        <span class=score-value>0</span>
+      </div>
+      <div class=dino-high-score>
+        <span class=high-score-label>Найкращий результат:</span>
+        <span class=high-score-value>0</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <section class=football-game>
+  <h2 class=football-title>Футбол</h2>
+  <div class=football-field>
+    <div class=field-frame>
+      
+      <p class=field-placeholder>Вставте зображення футбольного поля</p>
+    </div>
+    <div class=football-controls>
+      <button class=shoot-button>Удар по воротах</button>
+      <button class=pass-button>Пасування</button>
+      <button class=reset-button>Почати заново</button>
+    </div>
+    <div class=football-score>
+      <div class=team-score>
+        <span class=team-label>Ваша команда:</span>
+        <span class=team-value>0</span>
+      </div>
+      <div class=opponent-score>
+        <span class=opponent-label>Суперник:</span>
+        <span class=opponent-value>0</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <section class=max-number-finder>
+  <h2 class=max-number-title>Введіть 3 числа</h2>
+
+  <div class=number-inputs>
+    <div class=input-group>
+      <input type=number class=number-input data-index=0 placeholder="Введіть число">
+    </div>
+
+    <div class=input-group>
+      <input type=number class=number-input data-index=1 placeholder="Введіть число">
+    </div>
+
+    <div class=input-group>
+      <input type=number class=number-input data-index=2 placeholder="Введіть число">
+    </div>
+  </div>
+
+  <button class=find-max-button>
+    Найбільше число, яке ви ввели - <span class=max-number-value>--</span>
+  </button>
+</section>
+
+    <section class=our-team>
+  <h2 class=team-title>Наша команда</h2>
+
+  <div class=team-container>
+    <button class="left-btn nav-btn">
+      <svg width=24 height=24 viewBox="0 0 24 24" fill=none><path d="M15 18L9 12L15 6" stroke=currentColor stroke-width=2 stroke-linecap=round stroke-linejoin=round /></svg>
+    </button>
+
+    <div class=team-slider-area>
+      <div class=team-slider>
+        <div class=team-slide>
+          <div class=member-card>
+            <div class=member-avatar>
+              <div class=avatar-placeholder>
+                <span class=avatar-text>AJ</span>
+              </div>
+            </div>
+            <div class=member-details>
+              <h3 class=member-name>Ім'я студента</h3>
+              <p class=member-work>
+                Інформація про роботу, яку він/вона виконав/ла
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class=team-slide>
+          <div class=member-card>
+            <div class=member-avatar>
+              <div class=avatar-placeholder>
+                <span class=avatar-text>OK</span>
+              </div>
+            </div>
+            <div class=member-details>
+              <h3 class=member-name>Ім'я студента</h3>
+              <p class=member-work>
+                Інформація про роботу, яку він/вона виконав/ла
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class=team-slide>
+          <div class=member-card>
+            <div class=member-avatar>
+              <div class=avatar-placeholder>
+                <span class=avatar-text>MP</span>
+              </div>
+            </div>
+            <div class=member-details>
+              <h3 class=member-name>Ім'я студента</h3>
+              <p class=member-work>
+                Інформація про роботу, яку він/вона виконав/ла
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class=team-slide>
+          <div class=member-card>
+            <div class=member-avatar>
+              <div class=avatar-placeholder>
+                <span class=avatar-text>YSh</span>
+              </div>
+            </div>
+            <div class=member-details>
+              <h3 class=member-name>Ім'я студента</h3>
+              <p class=member-work>
+                Інформація про роботу, яку він/вона виконав/ла
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button class="nav-btn right-btn">
+      <svg width=24 height=24 viewBox="0 0 24 24" fill=none><path d="M9 18L15 12L9 6" stroke=currentColor stroke-width=2 stroke-linecap=round stroke-linejoin=round /></svg>
+    </button>
+  </div>
+
+  <div class=slider-dots>
+    <span class="active dot"></span>
+    <span class=dot></span>
+    <span class=dot></span>
+    <span class=dot></span>
+  </div>
+</section>
+
+    <section>
+  <h3>Обери вченого/вч</h3>
+
+  <div class=grid>
+    <div class=card id=c1>1</div>
+    <div class=card id=c2>2</div>
+    <div class=card id=c3>3</div>
+    <div class=card id=c4>4</div>
+
+    <div class=card id=c5>5</div>
+    <div class=card id=c6>6</div>
+    <div class=card id=c7>7</div>
+    <div class=card id=c8>8</div>
+
+    <div class=card id=c9>9</div>
+    <div class=card id=c10>10</div>
+    <div class=card id=c11>11</div>
+    <div class=card id=c12>12</div>
+  </div>
+
+  <ul class=questions-list>
+    <li id=q1>Які вчені народилися в 19 ст.?</li>
+    <li id=q2>Які вчені народилися в 20 ст.?</li>
+    <li id=q3>Які вчені народилися в 21 ст.?</li>
+    <li id=q4>Хто створив перший комп'ютер?</li>
+    <li id=q5>Хто винайшов електрику?</li>
+    <li id=q6>Хто відкрив атом?</li>
+    <li id=q7>Хто відкрив ДНК?</li>
+    <li id=q8>Хто винайшов телеграф?</li>
+    <li id=q9>Хто створив першу програму?</li>
+    <li id=q10>Які вчені працювали в галузі фізики?</li>
+    <li id=q11>Які вчені працювали в галузі математики?</li>
+    <li id=q12>Які вчені працювали в галузі хімії?</li>
+    <li id=q13>Хто отримав Нобелівську премію?</li>
+  </ul>
+</section>
+
+
+    <script src=/anna-polina-p/anna-polina-p.33eba27b.js></script>
+    <script src=/anna-polina-p/anna-polina-p.ed138c5b.js></script>
+    <script src=/anna-polina-p/anna-polina-p.39f4bb4a.js></script>
+    <script src=/anna-polina-p/anna-polina-p.549e96e2.js></script>
+    <script src=/anna-polina-p/anna-polina-p.120cfc22.js></script>
+    <script src=/anna-polina-p/anna-polina-p.074f7c66.js></script>
+    <script src=/anna-polina-p/anna-polina-p.3fd841ab.js></script>
+    <script src=/anna-polina-p/anna-polina-p.bdfffc2b.js></script>
+    <script src=/anna-polina-p/anna-polina-p.d1422fcc.js></script>
+    <script src=/anna-polina-p/anna-polina-p.2910c0ec.js></script>
+  
+

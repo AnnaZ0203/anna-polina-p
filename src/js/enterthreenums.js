@@ -6,12 +6,15 @@ document.addEventListener('DOMContentLoaded', function () {
   findMaxButton.addEventListener('click', function () {
     const numbers = [];
 
+    // allnums
     numberInputs.forEach(input => {
       const value = parseFloat(input.value);
       if (!isNaN(value)) {
         numbers.push(value);
       }
     });
+
+    //check amount
     if (numbers.length < 3) {
       maxNumberValue.textContent = 'помилка';
       maxNumberValue.style.color = 'red';
@@ -19,14 +22,17 @@ document.addEventListener('DOMContentLoaded', function () {
       return;
     }
 
+    // max numm
     const maxNumber = Math.max(...numbers);
     maxNumberValue.textContent = maxNumber;
-    maxNumberValue.style.color = 'green';
+    maxNumberValue.style.color = '#28a745';
 
     numberInputs.forEach(input => {
-      input.style.backgroundColor = '';
+      input.style.backgroundColor = '#fff';
+      input.style.borderColor = '#ddd';
       if (parseFloat(input.value) === maxNumber) {
         input.style.backgroundColor = '#d4edda';
+        input.style.borderColor = '#28a745';
       }
     });
   });

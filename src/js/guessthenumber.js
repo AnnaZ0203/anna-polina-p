@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
       guessingResult.textContent = `Вітаю, ви вгадали число! (${secretNumber})`;
       guessingResult.style.color = 'green';
 
-      // Генеруємо нове число для наступної гри
+      // generate num next gm
       setTimeout(() => {
         secretNumber = Math.floor(Math.random() * 100) + 1;
         guessingResult.textContent = 'Компютер загадав нове число від 1 до 100';

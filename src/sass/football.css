@@ -1,0 +1,13 @@
+#field {
+  width: 200px;
+  border: 10px groove black;
+  background-color: rgb(90, 187, 88);
+  position: relative;
+}
+
+#ball {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}/*# sourceMappingURL=football.css.map */

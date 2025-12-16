@@ -1,10 +1,16 @@
-<section class="year">
-  <h2>Популярні інтерактивні ігри</h2>
-
-  <h3>Перевір в який рік ти народився</h3>
-  <div class="flex">
-    <input placeholder="Введіть рік народження" />
-    <!-- <svg class="icon-lupa"></svg> -->
+<section class="leap-year-checker">
+  <h2 class="leap-year-title">Перевір в який рік тим народився</h2>
+  <div class="leap-year-input-group">
+    <label for="birthYear" class="leap-year-label"
+      >Введіть рік народження</label
+    >
+    <input
+      type="number"
+      id="birthYear"
+      class="leap-year-input"
+      placeholder="Наприклад, 1990"
+    />
+    <button class="leap-year-button">Перевірити</button>
   </div>
-  <p>Ви народилися у високосний рік!</p>
+  <p class="leap-year-result">Введіть рік для перевірки</p>
 </section>

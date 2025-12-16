@@ -1,0 +1,164 @@
+.our-team {
+  width: 100%;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px 20px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  .team-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #1f2937;
+    text-align: center;
+    margin-bottom: 32px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .team-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 24px;
+    height: 220px;
+
+    .nav-btn {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 1px solid #d1d5db;
+      color: #6b7280;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s;
+      flex-shrink: 0;
+
+      &:hover {
+        border-color: #9ca3af;
+        color: #374151;
+        background: #f9fafb;
+      }
+
+      &:active {
+        background: #f3f4f6;
+      }
+
+      &.left-btn {
+        order: 1;
+      }
+
+      &.right-btn {
+        order: 3;
+      }
+    }
+
+    .team-slider-area {
+      width: 700px;
+      height: 100%;
+      overflow: hidden;
+      position: relative;
+      order: 2;
+
+      .team-slider {
+        display: flex;
+        width: 2800px;
+        height: 100%;
+        transition: transform 0.3s ease;
+        position: absolute;
+        left: 0;
+        top: 0;
+
+        .team-slide {
+          width: 700px;
+          height: 100%;
+          padding: 0 20px;
+          box-sizing: border-box;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          .member-card {
+            width: 100%;
+            height: 180px;
+            background: #f9fafb;
+            border-radius: 8px;
+            padding: 24px;
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            border: 1px solid #e5e7eb;
+
+            .member-avatar {
+              flex-shrink: 0;
+
+              .avatar-placeholder {
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .avatar-text {
+                  color: white;
+                  font-size: 20px;
+                  font-weight: 600;
+                  letter-spacing: 0.5px;
+                }
+              }
+            }
+
+            .member-details {
+              flex: 1;
+
+              .member-name {
+                font-size: 18px;
+                font-weight: 600;
+                color: #111827;
+                margin-bottom: 8px;
+              }
+
+              .member-work {
+                font-size: 14px;
+                line-height: 1.5;
+                color: #6b7280;
+                margin: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #d1d5db;
+      cursor: pointer;
+      transition: background-color 0.2s;
+
+      &.active {
+        background: #4f46e5;
+      }
+
+      &:hover {
+        background: #9ca3af;
+      }
+    }
+  }
+}

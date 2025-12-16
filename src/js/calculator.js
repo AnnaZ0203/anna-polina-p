@@ -1,51 +1,46 @@
-'use strict';
+document.addEventListener('DOMContentLoaded', function () {
+  const num1Input = document.getElementById('num1');
+  const num2Input = document.getElementById('num2');
+  const operationButtons = document.querySelectorAll('.calc-operation');
+  const resultDisplay = document.querySelector('.calc-result-display');
 
-let num1 = document.getElementById('num1');
-let num2 = document.getElementById('num2');
-let result = document.getElementById('calc-result');
+  operationButtons.forEach(button => {
+    button.addEventListener('click', function () {
+      const num1 = parseFloat(num1Input.value);
+      const num2 = parseFloat(num2Input.value);
+      const operation = this.getAttribute('data-operation');
 
-let znak = '';
+      if (isNaN(num1) || isNaN(num2)) {
+        resultDisplay.textContent = 'Будь ласка, введіть обидва числа';
+        resultDisplay.style.color = 'red';
+        return;
+      }
 
-document.getElementById('plus').onclick = function () {
-  znak = '+';
-};
+      let result;
+      switch (operation) {
+        case 'add':
+          result = num1 + num2;
+          break;
+        case 'subtract':
+          result = num1 - num2;
+          break;
+        case 'multiply':
+          result = num1 * num2;
+          break;
+        case 'divide':
+          if (num2 === 0) {
+            resultDisplay.textContent = 'Помилка: ділення на нуль';
+            resultDisplay.style.color = 'red';
+            return;
+          }
+          result = num1 / num2;
+          break;
+        default:
+          result = 'Невідома операція';
+      }
 
-document.getElementById('minus').onclick = function () {
-  znak = '-';
-};
-
-document.getElementById('mult').onclick = function () {
-  znak = '*';
-};
-
-document.getElementById('div').onclick = function () {
-  znak = '/';
-};
-
-document.getElementById('eq').onclick = function () {
-  let a = Number(num1.value.trim);
-  let b = Number(num2.value);
-  let r = 0;
-  console.log(a);
-  if (znak == '+') {
-    return (r = a + b);
-  }
-
-  if (znak == '-') {
-    r = a - b;
-  }
-
-  if (znak == '*') {
-    r = a * b;
-  }
-
-  if (znak == '/') {
-    if (b == 0) {
-      result.textContent = 'На 0 не можна ділити!';
-      return;
-    }
-    r = a / b;
-  }
-
-  result.textContent = 'Результат: ' + r;
-};
+      resultDisplay.textContent = result;
+      resultDisplay.style.color = 'green';
+    });
+  });
+});

@@ -1,0 +1,2 @@
+var time=document.querySelector(".time"),input=time.querySelector(".input"),btn=time.querySelector(".btn"),result=time.querySelector(".result");btn.addEventListener("click",(function(){var t=Number(input.value);if(t){var e=Math.floor(t/3600),r=Math.floor(t%3600/60),n=t%60;result.textContent="".concat(e,"г ").concat(r,"хв ").concat(n,"с")}else result.textContent="Введи секунди"}));
+//# sourceMappingURL=index.c1fe8d43.js.map

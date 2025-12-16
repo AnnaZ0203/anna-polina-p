@@ -1,11 +1,31 @@
-<section class="knp">
-  <h3>Камінь - ножиці - папір</h3>
-  <div class="icon-row flex">
-    <!-- <img src="" />
-    <img src="" />
-    <img src="" /> -->
+<section class="rock-paper-scissors">
+  <h2 class="rps-title">Камінь - ножиці - папір</h2>
+  <p class="rps-round-result">Оберіть свій варіант</p>
+
+  <div class="rps-choices">
+    <button class="rps-choice" data-choice="камінь">Камінь</button>
+    <button class="rps-choice" data-choice="ножиці">Ножиці</button>
+    <button class="rps-choice" data-choice="папір">Папір</button>
   </div>
-  <p>Рахунок: Комп'ютер - 0, Ви - 0</p>
-  <button>Варіант комп'ютера</button>
-  <p>Ви виграли раунд!</p>
+
+  <div class="rps-info">
+    <div class="rps-computer-choice">
+      <h3>Варіант комп'ютера</h3>
+      <p class="computer-choice-display">--</p>
+    </div>
+
+    <div class="rps-score">
+      <h3>Рахунок:</h3>
+      <div class="score-board">
+        <div class="score-item">
+          <span class="score-label">Комп'ютер:</span>
+          <span class="score-value computer-score">0</span>
+        </div>
+        <div class="score-item">
+          <span class="score-label">Ви:</span>
+          <span class="score-value player-score">0</span>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>

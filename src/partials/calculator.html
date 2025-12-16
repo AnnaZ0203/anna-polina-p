@@ -1,18 +1,28 @@
 <section class="calculator">
-  <h3>Калькулятор</h3>
+  <h2 class="calculator-title">Калькулятор</h2>
+  <div class="calculator-inputs">
+    <div class="calculator-input-group">
+      <label for="num1" class="calculator-label">Введіть перше число</label>
+      <input type="number" id="num1" class="calculator-input" step="any" />
+    </div>
 
-  <div class="flex">
-    <input placeholder="Введіть число" />
-    <input placeholder="Введіть число" />
+    <div class="calculator-input-group">
+      <label for="num2" class="calculator-label">Введіть друге число</label>
+      <input type="number" id="num2" class="calculator-input" step="any" />
+    </div>
   </div>
-  <div class="calc-buttons">
-    <button type="button" id="plus">+</button>
-    <button type="button" id="minus">-</button>
-    <button type="button" id="mult">*</button>
-    <button type="button" id="div">/</button>
-    <button type="button" id="eq">=</button>
-  </div>
-  <h3>kbdkhsbd</h3>
 
-  <p id="calc-result">"Результат:"</p>
+  <div class="calculator-operations">
+    <button class="calc-operation" data-operation="add">+ Додати</button>
+    <button class="calc-operation" data-operation="subtract">- Відняти</button>
+    <button class="calc-operation" data-operation="multiply">
+      × Помножити
+    </button>
+    <button class="calc-operation" data-operation="divide">÷ Поділити</button>
+  </div>
+
+  <div class="calculator-result">
+    <h3>Результат:</h3>
+    <p class="calc-result-display">--</p>
+  </div>
 </section>
